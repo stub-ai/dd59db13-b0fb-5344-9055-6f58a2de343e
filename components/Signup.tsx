@@ -1,17 +1,11 @@
 import { useState } from 'react';
-import axios from 'axios';
 
-export default function Login() {
+export default function Signup() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  const handleLogin = async () => {
-    try {
-      const response = await axios.post('/api/login', { email, password });
-      // Handle login logic here
-    } catch (error) {
-      console.error(error);
-    }
+  const handleSignup = () => {
+    // Handle signup logic here
   };
 
   return (
@@ -30,8 +24,8 @@ export default function Login() {
         onChange={(e) => setPassword(e.target.value)}
         className="mb-4 p-2 w-64 rounded border border-gray-200"
       />
-      <button onClick={handleLogin} className="mb-4 p-2 w-64 rounded bg-blue-500 text-white">
-        Login
+      <button onClick={handleSignup} className="p-2 w-64 rounded bg-blue-500 text-white">
+        Signup
       </button>
     </div>
   );
