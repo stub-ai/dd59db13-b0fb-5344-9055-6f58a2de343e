@@ -13,7 +13,7 @@ export default function Signup({ toggleForm }: SignupProps) {
     try {
       const response = await axios.post('/api/signup', { email, password });
       if (response.status === 200) {
-        window.location.href = '/photos';
+        window.location.href = '/'; // Redirect to home page
       }
     } catch (error) {
       console.error(error);
