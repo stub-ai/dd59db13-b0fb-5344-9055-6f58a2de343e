@@ -7,9 +7,11 @@ interface Photo {
   votes: number;
 }
 
-export default function Photos() {
-  const [photos, setPhotos] = useState<Photo[]>([]);
+interface PhotosProps {
+  photos: Photo[];
+}
 
+export default function Photos({ photos }: PhotosProps) {
   const handleUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
     // Handle photo upload here
   };
