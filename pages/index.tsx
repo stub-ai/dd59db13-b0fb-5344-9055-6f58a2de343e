@@ -8,6 +8,22 @@ export default function Home() {
   const context = useContext(UserContext);
   const [showLogin, setShowLogin] = useState(true);
 
+  // Sample data to be passed to the Photos component
+  const photos = [
+    {
+      id: '1',
+      url: 'https://source.unsplash.com/random',
+      date: new Date().toISOString(),
+      votes: 10,
+    },
+    {
+      id: '2',
+      url: 'https://source.unsplash.com/random',
+      date: new Date().toISOString(),
+      votes: 20,
+    },
+  ];
+
   if (!context) {
     return (
       <div>
@@ -34,5 +50,6 @@ export default function Home() {
     );
   }
 
-  return <Photos />;
+  // Pass the sample data to the Photos component
+  return <Photos photos={photos} />;
 }
