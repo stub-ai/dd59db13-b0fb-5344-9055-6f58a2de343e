@@ -16,7 +16,9 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <UserContext.Provider value={{ user, setUser }}>
       <Header />
-      <Component {...pageProps} />
+      <div className="container mx-auto px-4">
+        <Component {...pageProps} />
+      </div>
     </UserContext.Provider>
   );
 }
