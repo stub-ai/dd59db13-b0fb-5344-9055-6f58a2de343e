@@ -1,6 +1,7 @@
 import { useState, createContext } from 'react';
 import '@/styles/globals.css';
 import type { AppProps } from 'next/app';
+import Header from '../components/Header';
 
 interface UserContextType {
   user: null | { email: string };
@@ -14,6 +15,7 @@ export default function App({ Component, pageProps }: AppProps) {
 
   return (
     <UserContext.Provider value={{ user, setUser }}>
+      <Header />
       <Component {...pageProps} />
     </UserContext.Provider>
   );

@@ -14,32 +14,32 @@ export default function Login() {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen">
+    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
       <input
         type="email"
         placeholder="Email"
         value={email}
         onChange={(e) => setEmail(e.target.value)}
-        className="mb-4"
+        className="mb-4 p-2 w-64 rounded border border-gray-200"
       />
       <input
         type="password"
         placeholder="Password"
         value={password}
         onChange={(e) => setPassword(e.target.value)}
-        className="mb-4"
+        className="mb-4 p-2 w-64 rounded border border-gray-200"
       />
       <input
         type="text"
         placeholder="Authentication Code"
         value={authCode}
         onChange={(e) => setAuthCode(e.target.value)}
-        className="mb-4"
+        className="mb-4 p-2 w-64 rounded border border-gray-200"
       />
-      <button onClick={handleLogin} className="mb-4">
+      <button onClick={handleLogin} className="mb-4 p-2 w-64 rounded bg-blue-500 text-white">
         Login
       </button>
-      <button onClick={handleSignup}>
+      <button onClick={handleSignup} className="p-2 w-64 rounded bg-blue-500 text-white">
         Signup
       </button>
     </div>

@@ -16,9 +16,12 @@ export default function Header() {
   };
 
   return (
-    <header>
+    <header className="p-4 bg-blue-500 text-white flex justify-between items-center">
+      <h1 className="text-2xl">My App</h1>
       {user ? (
-        <button onClick={handleLogout}>Logout</button>
+        <button onClick={handleLogout} className="bg-red-500 p-2 rounded text-white">
+          Logout
+        </button>
       ) : (
         <p>Please login to access the site.</p>
       )}
