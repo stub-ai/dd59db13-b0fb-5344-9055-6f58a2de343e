@@ -1,11 +1,23 @@
 import { useState } from 'react';
+import axios from 'axios';
 
-export default function Signup() {
+interface SignupProps {
+  toggleForm: () => void;
+}
+
+export default function Signup({ toggleForm }: SignupProps) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  const handleSignup = () => {
-    // Handle signup logic here
+  const handleSignup = async () => {
+    try {
+      const response = await axios.post('/api/signup', { email, password });
+      if (response.status === 200) {
+        window.location.href = '/photos';
+      }
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   return (
@@ -26,6 +38,9 @@ export default function Signup() {
       />
       <button onClick={handleSignup} className="p-2 w-64 rounded bg-blue-500 text-white">
         Signup
+      </button>
+      <button onClick={toggleForm} className="mb-4 p-2 w-64 rounded bg-blue-500 text-white">
+        Login Instead
       </button>
     </div>
   );

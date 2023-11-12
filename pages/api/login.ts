@@ -8,5 +8,5 @@ export default function handler(
   // Validate and authenticate user here
   // If successful, return user data
   // If not, return error
-  res.status(200).json({ email });
+  res.status(200).json({ user: { email } });
 }
